@@ -2,7 +2,12 @@ import React from 'react';
 
 class App extends React.Component {
   render() {
-    return React.createElement('h1', null, 'Hello React')
+    return (
+      <div>
+        <h1>Hello React</h1>
+        <b>bold</b>
+      </div>
+    )
   }
 }
 
