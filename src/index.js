@@ -4,6 +4,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App />, document.getElementById('root')
+  <App txt="this is the txt prop" />,
+  document.getElementById('root')
 );
 registerServiceWorker();
