@@ -1,14 +1,15 @@
 import React from 'react';
 
 class App extends React.Component {
-  render() {
-    let txt = this.props.txt
-    return <h1>{txt}</h1>
+  constructor() {
+    super();
+    this.state = {
+      txt: 'This is the state text',
+    }
   }
-}
-
-App.defaultProps = {
-  txt: 'this is the default text'
+  render() {
+    return <h1>{this.state.txt}</h1>
+  }
 }
 
 export default App
