@@ -7,7 +7,7 @@ class App extends React.Component {
       txt: 'This is the state text',
     }
   }
-  updateText(event) {
+  update(event) {
     this.setState({
       txt: event.target.value
     })
@@ -16,10 +16,13 @@ class App extends React.Component {
     return (
       <div>
         <h1>{this.state.txt}</h1>
-        <input type="text" onChange={this.updateText.bind(this)} />
+        <Widget update={this.update.bind(this)} />
       </div>
     )
   }
 }
+
+const Widget = (props) =>
+  <input type="text" onChange={props.update} />
 
 export default App
