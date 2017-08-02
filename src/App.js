@@ -3,26 +3,25 @@ import React from 'react';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      txt: 'This is the state text',
-    }
+    this.state = {a: ''}
   }
-  update(event) {
+  update(e) {
     this.setState({
-      txt: event.target.value
+      a: this.refs.a.value,
+      b: this.refs.b.value,
     })
   }
   render() {
     return (
       <div>
-        <h1>{this.state.txt}</h1>
-        <Widget update={this.update.bind(this)} />
+        <input ref="a" onChange={this.update.bind(this)} />
+        {this.state.a}
+        <hr />
+        <input ref="b" type="text" onChange={this.update.bind(this)} />
+        {this.state.b}
       </div>
     )
   }
 }
-
-const Widget = (props) =>
-  <input type="text" onChange={props.update} />
 
 export default App
